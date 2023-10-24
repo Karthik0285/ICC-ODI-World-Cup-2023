@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="ICC Men's Cricket World Cup Logo.png" type="image/.png" alt="ICC Men's Cricket World Cup Logo" loading="lazy">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ICC ODI World Cup 2023</title>
+</head>
+<body>
+<div id="container">
+    <div id="logo">
+        <img src="ICC Men's Cricket World Cup Logo.png" alt="ICC Men's Cricket World Cup Logo" loading="lazy"/>
+    </div>
+    <div id="background">
+        <img src="India-team-logo.png" alt="India logo" loading="lazy"/>
+    </div>
+    <div id="heading">
+        <div>
+            <h1 id="team-name">Indian Cricket Team</h1>
+        </div>
+        <p>
+            The Indian cricket team is a powerhouse in the cricketing world with a passionate fan base. They have a storied cricketing history, and their matches are celebrated like festivals across the country.
+        </p>
+        <a href="https://www.hotstar.com/gb" target="_blank"><button><i class="fas fa-eye"></i> Watch Live</button></a>
+        <a href="https://www.cricbuzz.com/" target="_blank"><button id="live"><i class="fas fa-check"></i> Check Score</button></a>
+    </div>
+    <div id="image">
+        <img id="myimage" src="indian-team.png" alt="Indian Team" loading="lazy"/>
+    </div>
+    <div id="nav-bar">
+        <ul>
+            <a href="#" target="_self"><li><i class="fa-solid fa-house"></i> Home</li></a>
+            <a href="https://www.cricbuzz.com/cricket-team" target="_blank"><li><i class="fas fa-users"></i> Teams</li></a>
+            <a href="https://www.cricbuzz.com/cricket-schedule/upcoming-series/international" target="_blank"><li><i class="fas fa-calendar-alt"></i> Schedule</li></a>
+            <a href="https://www.cricbuzz.com/cricket-stats/icc-rankings/men/batting" target="_blank"><li><i class="fas fa-star"></i> Rankings</li></a>
+        </ul>
+    </div>
+    <div id="empty">
+
+    </div>
+    <div id="teams">
+        <ol>
+            <li data-image="indian-team.png" data-color="Blue" data-head="Indian Cricket Team" data-logo="India-team-logo.png" alt="Indian Team" loading="lazy">IND</li>
+            <li data-image="eng-team.png" data-color="DarkSlateGray" data-head="England Cricket Team" data-logo="eng-team-logo.png" alt="England Team" loading="lazy">ENG</li>
+            <li data-image="aus-team.png" data-color="Olive" data-head="Australia Cricket Team" data-logo="aus-logo.png" alt="Australia Team" loading="lazy">AUS</li>
+            <li data-image="ban-team.png" data-color="ForestGreen" data-head="Bangladesh Cricket Team" data-logo="ban-logo.png" alt="Bangladesh Team" loading="lazy">BAN</li>
+        </ol>
+    </div>
+</div>
+
+<script>
+    const teamList = document.querySelectorAll('#teams li');
+const teamImage = document.getElementById('myimage');
+const emptyBackground = document.getElementById('empty');
+const teamHeading = document.getElementById('team-name');
+const teamLogo = document.getElementById('logobg');
+const teamDescription = document.querySelector('#heading p');
+
+teamList.forEach((team) => {
+    team.addEventListener('click', () => {
+        const image = team.getAttribute('data-image');
+        const color = team.getAttribute('data-color');
+        const head = team.getAttribute('data-head');
+        const logo = team.getAttribute('data-logo');
+        const description = getDescriptionForTeam(head);
+
+        teamImage.src = image;
+        emptyBackground.style.backgroundColor = color;
+        teamHeading.innerText = head;
+        teamLogo.src = logo;
+        teamDescription.innerText = description;
+    });
+});
+
+function getDescriptionForTeam(teamName) {
+    switch (teamName) {
+        case 'England Cricket Team':
+            return "England's cricket team is known for its rich history and competitive spirit. They have produced legendary cricketers over the years and have a strong tradition of Test and One-Day cricket.";
+        case 'Australia Cricket Team':
+            return "Australia's cricket team is one of the most successful teams in cricket history. They have won numerous World Cups and have dominated the cricketing world with their aggressive style of play.";
+        case 'Bangladesh Cricket Team':
+            return "The Bangladesh cricket team has shown remarkable improvement in recent years. They have become a force to be reckoned with in the cricketing world and have a dedicated fan base.";
+        case 'Indian Cricket Team':
+            return "The Indian cricket team is a powerhouse in the cricketing world with a passionate fan base. They have a storied cricketing history, and their matches are celebrated like festivals across the country.";
+        default:
+            return "";
+    }
+}
+</script>
+
+</body>
+</html>
