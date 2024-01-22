@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="ICC Men's Cricket World Cup Logo.png" type="image/.png" alt="ICC Men's Cricket World Cup Logo" loading="lazy">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ICC ODI World Cup 2023</title>
+</head>
+<body>
+
+    <div id="Logo">
+        <img src="ICC Men's Cricket World Cup Logo.png" alt="ICC Men's Cricket World Cup Logo" loading="lazy"/>
+    </div>
+
+    <div id="Nav-bar">
+        <ul>
+            <a href="#" target="_self" data-team="IND"><li><i class="fa-solid fa-house"></i> Home</li></a>
+            <a href="#" target="_self" data-team="ENG"><li><i class="fas fa-users"></i> Teams</li></a>
+            <a href="#" target="_self" data-team="AUS"><li><i class="fas fa-calendar-alt"></i> Schedule</li></a>
+            <a href="#" target="_self" data-team="BAN"><li><i class="fas fa-star"></i> Rankings</li></a>
+        </ul>
+    </div>
+
+    <div id="Background">
+        <img src="India-team-logo.png" alt="India logo" loading="lazy"/>
+    </div>
+
+    <div id="Heading">
+        <h1>Indian Cricket Team</h1>
+    </div>
+    
+    <div id="Content">
+    <p id="teamDescription">
+
+        The Indian cricket team is one of the powerhouses in the cricketing world with a passionate fan base. They have a storied cricketing history, and their matches in India are celebrated like festivals.</p>
+    </div>
+
+    <div>
+        <a href="https://www.hotstar.com/gb" target="_blank"><button><i class="fas fa-eye"></i> Watch Live</button></a>
+        <a href="https://www.cricbuzz.com/" target="_blank"><button><i class="fas fa-check"></i> Check Score</button></a>
+    </div>
+
+    <div id="Image">
+        <img src="indian-team.png" alt="Indian Team" loading="lazy"/>
+    </div>
+
+    <div id="empty"></div>
+
+    <div id="Teams">
+        <ol>
+            <li data-image="indian-team.png" data-color="Blue" data-head="Indian Cricket Team" data-logo="India-team-logo.png" data-description="The Indian cricket team is one of the powerhouses in the cricketing world with a passionate fan base. They have a storied cricketing history, and their matches in India are celebrated like festivals." alt="Indian Team" loading="lazy">IND</li>
+            <li data-image="eng-team.png" data-color="DarkSlateGray" data-head="England Cricket Team" data-logo="eng-team-logo.png" data-description="England's cricket team is known for its rich history and for competitive spirit. Over the years, they have produced many legendary cricketers and they have a strong tradition in Test and One-Day cricket." alt="England Team" loading="lazy">ENG</li>
+            <li data-image="aus-team.png" data-color="Olive" data-head="Australia Cricket Team" data-logo="aus-logo.png" data-description="The Australia cricket team stands among the most successful teams in the cricket history. They have won numerous World Cups and have dominated the cricketing world with their aggressive style of play." alt="Australia Team" loading="lazy">AUS</li>
+            <li data-image="ban-team.png" data-color="ForestGreen" data-head="Bangladesh Cricket Team" data-logo="ban-logo.png" data-description="Bangladesh cricket team's remarkable improvement and global recognition with a dedicated fan base reflect a commitment to excellence and a growing impact in cricket." alt="Bangladesh Team" loading="lazy">BAN</li>
+        </ol>
+    </div>
+    <script>
+        const teamList = document.querySelectorAll('#Teams li');
+        const emptyBackground = document.getElementById('empty');
+        const teamImage = document.getElementById('Image').querySelector('img');
+        const teamHeading = document.getElementById('Heading').querySelector('h1');
+        const teamDescription = document.getElementById('teamDescription');
+        const navLinks = document.querySelectorAll('#Nav-bar ul a');
+
+        teamList.forEach((team) => {
+            team.addEventListener('click', () => {
+                const color = team.getAttribute('data-color');
+                const head = team.getAttribute('data-head');
+                const image = team.getAttribute('data-image');
+                const description = team.getAttribute('data-description');
+                const logo = team.getAttribute('data-logo');
+
+                emptyBackground.style.backgroundColor = color;
+                teamImage.src = image;
+                teamHeading.innerText = head;
+                teamDescription.innerText = description;
+
+                document.getElementById('Background').querySelector('img').src = logo;
+                navLinks.forEach((link) => {
+                    const teamName = link.getAttribute('data-team');
+                    link.querySelector('img').src = document.querySelector(`#Teams li[data-head="${teamName}"]`).getAttribute('data-logo');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    color:white;
+}
+
+body{
+    font-family: sans-serif;
+    background-color: orange;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#Logo img{
+    width:125px;
+    height:100px;
+    cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+    #Logo img {
+        width: 30px;  
+        height: 50px; 
+    }
+}
+
+#Nav-bar ul{
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    list-style:none;
+    cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+    #Nav-bar ul {
+        flex-direction: row; 
+        width: auto; 
+        font-size: 15px;
+        padding:5px;
+        position: relative;
+        left:-30px;
+    }
+}
+
+#Nav-bar ul li{
+    padding: 40px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+@media only screen and (max-width: 600px) {
+    #Nav-bar ul li {
+        padding: 10px; 
+        font-size: 15px; 
+        position: relative;
+        top:-50px;
+        left:50px;
+    }
+}
+
+#Background img{
+    position:absolute;
+    width:450px;
+    margin-left:8%;
+    height:80vh;
+    opacity:0.38;
+}
+@media only screen and (max-width: 600px) {
+    #Background img {
+        width: 50%;
+        height: auto; 
+        margin-left: 0; 
+        position: absolute;
+        top:200px;
+    }
+}
+
+#Heading{
+    position: absolute;
+    width: 40%;
+    min-height: 65vh;
+    margin-left:75px;
+    color:whitesmoke;
+    top:200px;
+}
+@media only screen and (max-width: 600px) {
+    #Heading {
+        width: 50%; 
+        margin-left: 5px; 
+        position: absolute;
+        top:100px;
+    }
+}
+
+#Content{
+    position: absolute;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: justify;
+    width: 40%;
+    top:275px;
+    left:75px;
+}
+@media only screen and (max-width: 600px) {
+    #Content{
+    position: absolute;
+    font-size: 15px; 
+    font-weight: bolder;
+    text-align: justify;
+    width:50%;
+    top:225px;
+    left:10px;
+    }
+}
+
+button{
+    position: relative;
+    background-color: rgb(0, 21, 128);
+    color: white; 
+    font-size: 20px; 
+    font-weight: bolder; 
+    padding: 10px 20px;
+    border: none; 
+    border-radius: 30px; 
+    cursor: pointer; 
+    top:300px;
+    left:100px;
+    margin-right: 10px;
+}
+@media only screen and (max-width: 600px) {
+    button{
+        position: relative;
+        background-color: rgb(0, 21, 128);
+        color: white; 
+        font-size: 15px; 
+        font-weight: bolder; 
+        padding: 5px 5px; 
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        top:300px; 
+        left:5px; 
+        width: 50%;
+        margin-right: 10px;
+        margin-bottom: 10px; 
+
+    }
+}
+
+#Image img{
+    margin-left: 45.5%;
+    width: 700px;
+    height: 400px;
+    -webkit-box-reflect: below 2px linear-gradient(transparent,transparent,rgba(0,0,0,0.4));
+    position: absolute;
+    top:100px;
+}
+@media only screen and (max-width: 600px) {
+    #Image img {
+        width: 45%; 
+        height: 425px; 
+        -webkit-box-reflect: below 2px linear-gradient(transparent,transparent,rgba(0,0,0,0.4));
+        position: absolute;
+        left:30px;
+        top:100px;
+    }
+}
+
+#empty {
+    position: absolute;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    background-color: blue;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+@media only screen and (max-width: 600px) {
+    #empty {
+        position: fixed; 
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); 
+        background-color: blue;
+        width: 100%;
+        height: 75vh; 
+        top: 0;
+        right: 0;
+        z-index: -1;
+    }
+}
+
+#Teams ol{
+    display: flex;
+    position: absolute;
+    list-style: none;
+    margin-left: 30%;
+}
+@media only screen and (max-width: 600px) {
+    #Teams ol {
+        display: flex; 
+        position: absolute; 
+        margin: 0; 
+        padding: 5px; 
+    }
+}
+
+#Teams ol li{
+    margin:25px;
+    font-size: 20px;
+    font-weight: 900;
+    cursor: pointer;
+    position: relative;
+    top:375px;
+}
+@media only screen and (max-width: 600px) {  
+    #Teams ol li {
+        margin: 15px; 
+        font-size: 16px; 
+        font-weight: 700; 
+        position: relative;
+        left:50px;
+        top:375px;
+    }
+}
+a{
+    text-decoration: none;
+}
